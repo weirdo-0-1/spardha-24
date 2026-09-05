@@ -4,6 +4,7 @@ import { FaMapMarkerAlt } from 'react-icons/fa';
 import './HeroSection.css';
 import Confetti from './Confetti';
 import { ConfettiSideCannons } from './ConfettiSideCannons';
+import FootballCountdown from './FootballCountdown';
 
 const HeroSection = () => {
   // Countdown target: 10th October (IST)
@@ -59,17 +60,7 @@ const HeroSection = () => {
       <div className="bottom-row">
         {/* LEFT DIV: countdown timer to 10th October */}
         <div className="countdown-tagline">
-          <div className="countdown">
-            {[days, hours, minutes].map((time, i) => (
-              <React.Fragment key={i}>
-                <div className="time-box">
-                  <span>{String(time).padStart(2, '0')}</span>
-                  <p>{['DAYS', 'HOURS', 'MINUTES'][i]}</p>
-                </div>
-                {i < 2 && <div className="divider"></div>}
-              </React.Fragment>
-            ))}
-          </div>
+          <FootballCountdown />
         </div>
         <div>
           <div className="opening-info">
